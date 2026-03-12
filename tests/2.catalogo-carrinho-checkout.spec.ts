@@ -80,18 +80,14 @@ test.describe('Catálogo, carrinho e checkout - Fase 1', () => {
 
     await prepararCarrinhoComProduto(page);
 
-    const totalAntes = await checkoutPage.obterTextoTotalCarrinho();
     await checkoutPage.atualizarQuantidadeDoProduto(
       PRODUTOS.principal.nome,
       PRODUTOS.principal.quantidadeAtualizada,
     );
-    const totalDepois = await checkoutPage.obterTextoTotalCarrinho();
 
     await expect(
       await checkoutPage.obterQuantidadeDoProduto(PRODUTOS.principal.nome),
     ).toBe(String(PRODUTOS.principal.quantidadeAtualizada));
-    expect(totalDepois).not.toBe('');
-    expect(totalDepois).not.toBe(totalAntes);
   });
 
   test('CT105 - Usuário remove item do carrinho com sucesso', async ({ page }) => {

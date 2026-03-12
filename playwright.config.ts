@@ -38,7 +38,8 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        channel: 'chrome',
+        // Em CI usamos o Chromium do Playwright para evitar dependência do Chrome estável instalado no runner.
+        channel: process.env['CI'] ? undefined : 'chrome',
       },
     },
 
