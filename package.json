@@ -1,0 +1,43 @@
+{
+  "name": "meu-portfolio-automacao-qa",
+  "version": "1.0.0",
+  "description": "Portfolio de automação QA com Playwright + AI Integration",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "generate:tests": "tsx scripts/ai-test-generator.ts",
+    "analyze:results": "tsx scripts/ai-results-analyzer.ts",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,json,md}\""
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "qa",
+    "testing",
+    "ai",
+    "openai",
+    "typescript"
+  ],
+  "author": "Michelina Sousa",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "prettier": "^3.1.0"
+  },
+  "dependencies": {
+    "openai": "^4.24.0",
+    "dotenv": "^16.3.1"
+  }
+}
