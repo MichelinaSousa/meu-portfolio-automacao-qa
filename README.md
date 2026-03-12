@@ -45,6 +45,12 @@ npm install
 # Modo headless
 npm run test
 
+# Somente testes de API (Fase 2)
+npm run test:api
+
+# Suíte UI usada no CI
+npm run test:ui:ci
+
 # Com interface visual
 npm run test:headed
 
@@ -84,8 +90,9 @@ meu-portfolio-automacao-qa/
 │
 ├── tests/
 │   ├── 1.autenticacao.spec.ts    # Testes de login/autenticação
-│   ├── 2.crud.spec.ts            # Testes de criar/ler/atualizar/deletar
-│   ├── 3.fluxo-completo.spec.ts  # Testes E2E
+│   ├── 2.catalogo-carrinho-checkout.spec.ts
+│   │                             # Fluxo E2E de catálogo/carrinho/checkout
+│   ├── 3.api.spec.ts             # Testes de API (auth, products, cart)
 │   └── fixtures/                 # Dados de teste
 │
 ├── scripts/
@@ -97,9 +104,7 @@ meu-portfolio-automacao-qa/
 │   └── helpers/
 │
 ├── .github/workflows/
-│   ├── tests.yml                 # Pipeline de testes
-│   ├── ai-analysis.yml           # Pipeline com análise IA
-│   └── deploy.yml                # Deploy automático
+│   └── tests.yml                 # Pipeline CI para UI + API em PR/push
 │
 ├── playwright.config.ts          # Configuração do Playwright
 ├── tsconfig.json                 # Configuração TypeScript
@@ -134,25 +139,28 @@ Geração automática de relatórios que incluem:
 
 ## 🔄 CI/CD com IA
 
-Os workflows do GitHub Actions automaticamente:
-1. Executam testes a cada commit
-2. Analisam resultados com IA
-3. Geram relatórios automáticos
-4. Criam issues para falhas críticas
-5. Sugerem correções via IA
+O workflow do GitHub Actions automaticamente:
+1. Executa os testes de UI em push para `main`
+2. Executa os testes de API em push para `main`
+3. Executa ambas as suítes em Pull Requests para `main`
+4. Publica artifacts com `playwright-report` e `test-results`
+5. Permite execução manual via `workflow_dispatch`
 
 ```yaml
-# Exemplo de workflow
-on: [push, pull_request]
+# Resumo do workflow atual
+name: QA Automation CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
 jobs:
-  test-with-ai:
+  ui-tests:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Executar testes
-        run: npm run test
-      - name: Análise com IA
-        run: npm run analyze:results
+  api-tests:
+    runs-on: ubuntu-latest
 ```
 
 ## 📊 Exemplos de Testes

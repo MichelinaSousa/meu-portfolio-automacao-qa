@@ -20,11 +20,34 @@ export const USUARIOS = {
     senha: 'senha-errada',
   },
   semSenha: {
-    email: 'customer@practicesoftwaretesting.com',
+    email: 'customer2@practicesoftwaretesting.com',
     senha: '',
   },
   semEmail: {
     email: '',
     senha: 'welcome01',
   },
+};
+
+export const PRODUTOS = {
+  principal: {
+    nome: 'Combination Pliers',
+    quantidadeInicial: 1,
+    quantidadeAtualizada: 2,
+  },
+  inexistente: {
+    nome: 'Produto inexistente automacao qa xyz',
+  },
+};
+
+export const ENDERECO_CHECKOUT = {
+  street: 'Rua das Flores, 123',
+  city: 'Cabo Frio',
+  state: 'Rio de Janeiro',
+  country: 'Brasil',
+  postalCode: '28900-000',
+};
+
+export const PAGAMENTO_CHECKOUT = {
+  metodo: 'cash-on-delivery',
 };

@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "playwright test",
+    "test:api": "playwright test tests/3.api.spec.ts --project=chromium",
+    "test:ui:ci": "playwright test tests/1.autenticacao.spec.ts tests/2.catalogo-carrinho-checkout.spec.ts --project=chromium",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
