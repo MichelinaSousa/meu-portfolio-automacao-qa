@@ -159,7 +159,8 @@ O workflow do GitHub Actions automaticamente:
 2. Executa os testes de API em push para `main`
 3. Executa ambas as suítes em Pull Requests para `main`
 4. Publica artifacts com `playwright-report` e `test-results`
-5. Permite execução manual via `workflow_dispatch`
+5. Gera evidência consolidada de qualidade (`EXECUTION_SUMMARY.md`)
+6. Permite execução manual via `workflow_dispatch`
 
 ```yaml
 # Resumo do workflow atual
