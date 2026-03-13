@@ -4,6 +4,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088F0?style=for-the-badge&logo=github-actions&logoColor=white)
+[![QA Automation CI](https://github.com/MichelinaSousa/meu-portfolio-automacao-qa/actions/workflows/tests.yml/badge.svg)](https://github.com/MichelinaSousa/meu-portfolio-automacao-qa/actions/workflows/tests.yml)
 
 ## 📋 Sobre
 
@@ -240,6 +241,23 @@ npm run phase5:evidence
 
 Arquivo gerado:
 - `docs/qa/EXECUTION_SUMMARY.md`
+
+## 🧾 Evidências de Execução (Fase 7)
+
+- Workflow principal (CI):
+  - https://github.com/MichelinaSousa/meu-portfolio-automacao-qa/actions/workflows/tests.yml
+- Histórico de runs:
+  - https://github.com/MichelinaSousa/meu-portfolio-automacao-qa/actions
+- Artifact de evidência consolidada (gerado no job `QA Evidence Summary (Phase 6)`):
+  - `qa-execution-summary`
+  - Conteúdo: `docs/qa/EXECUTION_SUMMARY.md` e `playwright-output.json`
+
+### Como localizar rapidamente a evidência no GitHub
+
+1. Abra a aba **Actions** do repositório.
+2. Entre no run mais recente do workflow **QA Automation CI**.
+3. Vá até a seção **Artifacts**.
+4. Baixe o artifact **qa-execution-summary**.
 
 ## 🎓 Aprendizados & Decisões
 
