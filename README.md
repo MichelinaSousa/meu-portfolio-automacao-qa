@@ -96,6 +96,8 @@ meu-portfolio-automacao-qa/
 │   ├── ARCHITECTURE.md           # Arquitetura e padrões
 │   ├── AI-INTEGRATION.md         # Como a IA está integrada
 │   └── qa/
+│       ├── HISTORICO_COMMITS_PTBR.md
+│       │                         # Resumo em PT-BR dos commits já publicados
 │       ├── fluxo-autenticacao.md
 │       ├── fluxo-crud.md
 │       └── casos-uso.md
