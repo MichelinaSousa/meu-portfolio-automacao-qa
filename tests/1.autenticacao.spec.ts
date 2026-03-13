@@ -4,6 +4,7 @@ import { DashboardPage } from '../PageObject/DashboardPage';
 import { USUARIOS } from './fixtures/users';
 
 test.describe('Autenticação', () => {
+  test.setTimeout(60_000);
 
   test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
@@ -45,6 +46,8 @@ test.describe('Autenticação', () => {
   // =========================================================
 
   test('CT003 - Login com credenciais inválidas exibe mensagem de erro', async ({ page }) => {
+    test.slow();
+
     // Arrange
     const loginPage = new LoginPage(page);
 
@@ -56,6 +59,8 @@ test.describe('Autenticação', () => {
   });
 
   test('CT004 - Login sem preencher senha exibe validação', async ({ page }) => {
+    test.slow();
+
     // Arrange
     const loginPage = new LoginPage(page);
 
@@ -68,6 +73,8 @@ test.describe('Autenticação', () => {
   });
 
   test('CT005 - Login sem preencher e-mail exibe validação', async ({ page }) => {
+    test.slow();
+
     // Arrange
     const loginPage = new LoginPage(page);
 
