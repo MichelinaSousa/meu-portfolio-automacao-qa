@@ -48,6 +48,22 @@ npm run test
 # Somente testes de API (Fase 2)
 npm run test:api
 
+# API avançada (Fase 3)
+npm run test:api:advanced
+
+# API contrato/regressão (Fase 4)
+npm run test:api:contract
+
+# API completa (Fases 2 a 4)
+npm run test:api:all
+
+# Tags por estratégia
+npm run test:smoke
+npm run test:regression
+
+# Evidência consolidada (Fase 5)
+npm run phase5:evidence
+
 # Suíte UI usada no CI
 npm run test:ui:ci
 
@@ -93,15 +109,14 @@ meu-portfolio-automacao-qa/
 │   ├── 2.catalogo-carrinho-checkout.spec.ts
 │   │                             # Fluxo E2E de catálogo/carrinho/checkout
 │   ├── 3.api.spec.ts             # Testes de API (auth, products, cart)
+│   ├── 4.api-avancada.spec.ts    # Cenários avançados de API
+│   ├── 5.api-contrato-regressao.spec.ts
+│   │                             # Contrato + regressão com tags (@smoke/@regression)
 │   └── fixtures/                 # Dados de teste
 │
 ├── scripts/
-│   ├── ai-test-generator.ts      # Gera testes com IA (Claude/GPT)
-│   ├── ai-results-analyzer.ts    # Analisa resultados com IA
-│   ├── utils/
-│   │   ├── openai-client.ts
-│   │   └── report-formatter.ts
-│   └── helpers/
+│   └── generate-execution-summary.ts
+│                                 # Gera sumário de execução para portfólio
 │
 ├── .github/workflows/
 │   └── tests.yml                 # Pipeline CI para UI + API em PR/push
@@ -216,6 +231,14 @@ Acesse os relatórios em:
 ```bash
 npm run report
 ```
+
+Para gerar evidência consolidada em markdown (Fase 5):
+```bash
+npm run phase5:evidence
+```
+
+Arquivo gerado:
+- `docs/qa/EXECUTION_SUMMARY.md`
 
 ## 🎓 Aprendizados & Decisões
 
