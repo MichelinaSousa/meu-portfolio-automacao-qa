@@ -6,6 +6,7 @@ Este documento resume, em português, os commits já publicados no repositório 
 
 | Hash | Mensagem original | Resumo em português |
 |---|---|---|
+| —       | `feat(phase8): add AI test generator with OpenAI integration` | Fase 8: implementado gerador de testes com IA (`scripts/ai-test-generator.ts`). Lê histórias de usuário em Markdown, chama a OpenAI para gerar specs Playwright/TypeScript e exibe/salva o resultado. Inclui modo demo (sem chave API), duas user stories de exemplo e suporte a flags `--story` e `--output`. |
 | f83ac6a | `docs(phase7): add CI badge and execution evidence section` | Documentação da Fase 7: adicionado badge de status do CI e seção de evidências de execução no README. |
 | 3345fc5 | `feat(ci): phase 6 publish qa evidence artifact` | Fase 6 no CI: criado job para gerar e publicar artifact com evidências de execução (`qa-execution-summary`). |
 | 18e9230 | `feat(phase5): add automated execution evidence summary` | Fase 5: implementada geração automática de sumário de qualidade da execução (Markdown + JSON). |
